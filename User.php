@@ -19,7 +19,7 @@ class User {
     }
 
     public function talk() {
-        return "Hello world!!!";
+        return "Hello world!!";
     }
 
 }
