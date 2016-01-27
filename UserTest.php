@@ -15,4 +15,5 @@ class UserTest extends PHPUnit_Framework_TestCase
         $actual = $user->talk();
         $this->assertEquals($expected, $actual);
     }
+
 }
