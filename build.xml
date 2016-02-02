@@ -1,7 +1,40 @@
 <?xml version="1.0"?>
-<project name="user">
-    <exec executable="phpunit" failonerror="true">
-        <arg line=" UnitTest UserTest.php" />
-    </exec>
-    <copy file="User.php" tofile="builds/User.php"/>
+<!--<project name="user">-->
+    <!--<exec executable="phpunit" failonerror="true">-->
+        <!--<arg line=" UnitTest UserTest.php" />-->
+    <!--</exec>-->
+    <!--<copy file="User.php" tofile="builds/User.php"/>-->
+<!--</project>-->
+
+
+<project name="User" basedir="." default="ci">
+
+<!--<target name="CI">-->
+    <!--<phpunit haltonfailure="true" printsummary="true">-->
+        <!--<batchtest>-->
+            <!--<fileset dir=".">-->
+                <!--<include name="*Test.php"/>-->
+            <!--</fileset>-->
+        <!--</batchtest>-->
+    <!--</phpunit>-->
+<!--</target>-->
+    <target name="ci"
+            description="Tâche principale d'intégration continue"
+            depends="clean,qa"
+    />
+
+    <target name="clean" description="Vide les répertoires d'artefacts">
+
+    </target>
+
+    <target name="qa" description="Lance les outils d'analyse">
+        <phingcall target="phpunit" />
+        <!--<phingcall target="second-outil" />-->
+        <!--<phingcall target="troisime-outil" />-->
+    </target>
+
+    <target name="phpunit" description="lance les tests unitaires">
+        <exec logoutput="true" dir="${project.basedir}" command="phpunit" escape="false" />
+    </target>
+
 </project>
