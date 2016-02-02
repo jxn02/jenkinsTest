@@ -6,7 +6,6 @@
     <!--<copy file="User.php" tofile="builds/User.php"/>-->
 <!--</project>-->
 <project name="User" basedir="." default="ci">
-
 <!--<target name="CI">-->
     <!--<phpunit haltonfailure="true" printsummary="true">-->
         <!--<batchtest>-->
