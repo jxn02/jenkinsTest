@@ -30,9 +30,7 @@
         <!--<phingcall target="second-outil" />-->
         <!--<phingcall target="troisime-outil" />-->
     </target>
-
     <target name="phpunit" description="lance les tests unitaires">
         <exec logoutput="true" dir="${project.basedir}" command="phpunit" escape="false" />
     </target>
-
 </project>
